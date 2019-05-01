@@ -1,0 +1,80 @@
+# Global variable
+[fields]
+    [fields.Package]
+    type = "String"
+    value = "world.fallen.android_boilerplate"
+    [fields.AppRoot]
+    type = "String"
+    value = "app/src/main/java/world/fallen/android_boilerplate"
+
+
+
+# Task List
+[[tasks]]
+name = "HTTP Service(Retrofit)"
+
+[tasks.fields]
+    [tasks.fields.ClassName]
+    type = "StringInput"
+    message = "Class Name"
+    [tasks.fields.URL]
+    type = "StringInput"
+    message = "Host URL(http://domain.com/)"
+
+[[tasks.files]]
+templatepath = "template/service/HTTPService.java"
+exportpath = "{{.Print \"AppRoot\"}}/data/http/{{.Title \"ClassName\"}}.java"
+
+
+
+[[tasks]]
+name = "Device Helper"
+
+[[tasks.files]]
+templatepath = "template/helper/DeviceInfoHelper.java"
+exportpath = "{{.Print \"AppRoot\"}}/utils/DeviceInfoHelper.java"
+
+
+
+[[tasks]]
+name = "Intent Helper"
+
+[[tasks.files]]
+templatepath = "template/helper/IntentHelper.java"
+exportpath = "{{.Print \"AppRoot\"}}/utils/IntentHelper.java"
+
+
+
+[[tasks]]
+name = "String Helper"
+
+[[tasks.files]]
+templatepath = "template/helper/StringHelper.java"
+exportpath = "{{.Print \"AppRoot\"}}/utils/StringHelper.java"
+
+
+
+[[tasks]]
+name = "URL Helper"
+
+[[tasks.files]]
+templatepath = "template/helper/URLHelper.java"
+exportpath = "{{.Print \"AppRoot\"}}/utils/URLHelper.java"
+
+
+
+[[tasks]]
+name = "Custom LinearLayout"
+
+[tasks.fields]
+    [tasks.fields.ClassName]
+    type = "StringInput"
+    message = "Class Name"
+
+[[tasks.files]]
+templatepath = "template/ui/component/CustomLinearLayout.java"
+exportpath = "{{.Print \"AppRoot\"}}/ui/component/{{.Title \"ClassName\"}}.java"
+
+[[tasks.files]]
+templatepath = "template/ui/component/custom_linear_layout.xml"
+exportpath = "app/src/main/res/layout/{{.Title \"ClassName\"}}.xml"
